@@ -20,10 +20,7 @@ let loading = document.getElementById('loading');
 search.addEventListener('click', async () => {
     let countryName = countryInput.value;
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
-
-    // Show the loading screen
-    loading.style.display = 'block';
-    search_result.style.display = 'none'; // Hide search result while loading
+  
 
     try {
         // Fetch country data
