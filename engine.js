@@ -13,20 +13,18 @@ let language = document.getElementById('language');
 let cs = document.getElementById('cs');
 let tz = document.getElementById('tz');
 
-// The loading element
-let loading = document.getElementById('loading');
 
-// Add event listener to the search button
+
+
 search.addEventListener('click', async () => {
     let countryName = countryInput.value;
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
 
-    // Show the loading screen
-    loading.style.display = 'block';
+  
     search_result.style.display = 'none'; // Hide search result while loading
 
     try {
-        // Fetch country data
+      
         let res = await fetch(finalURL);
         let data = await res.json();
 
@@ -51,11 +49,11 @@ search.addEventListener('click', async () => {
             language.innerHTML = Object.values(countryData.languages).toString().split(',').join(', ');
 
         } else {
-            loading.style.display = 'none'; // Hide loading screen on error
+              search_result.style.display = 'none'; 
             alert("Wrong input given");
         }
     } catch (e) {
-        loading.style.display = 'none'; // Hide loading screen if there is an error
+        search_result.style.display = 'none'; 
         console.log("Error: ", e);
         alert("An error occurred while fetching the data.");
     }
