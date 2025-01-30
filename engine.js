@@ -21,7 +21,7 @@ search.addEventListener('click', async () => {
     let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
 
   
-    search_result.style.display = 'none'; // Hide search result while loading
+    search_result.style.display = 'none'; 
 
     try {
       
@@ -29,8 +29,8 @@ search.addEventListener('click', async () => {
         let data = await res.json();
 
         if (res.ok) {
-            search_result.style.display = 'block'; // Show search result once data is fetched
-            loading.style.display = 'none'; // Hide loading screen
+            search_result.style.display = 'block'; 
+           
 
             let countryData = data[0];
 
